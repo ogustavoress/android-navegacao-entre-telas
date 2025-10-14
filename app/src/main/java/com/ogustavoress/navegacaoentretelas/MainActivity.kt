@@ -8,9 +8,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.ogustavoress.navegacaoentretelas.screens.LoginScreen
+import com.ogustavoress.navegacaoentretelas.screens.MenuScreen
+import com.ogustavoress.navegacaoentretelas.screens.PedidosScreen
+import com.ogustavoress.navegacaoentretelas.screens.PerfilScreen
 import com.ogustavoress.navegacaoentretelas.ui.theme.NavegacaoentretelasTheme
 
 class MainActivity : ComponentActivity() {
@@ -28,16 +32,16 @@ class MainActivity : ComponentActivity() {
                     )
                     {
                         composable(route = "login") {
-                            LoginScreen(modifier = Modifier.padding(innerPadding))
+                            LoginScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "menu") {
-                            MenuScreen(modifier = Modifier.padding(innerPadding))
+                            MenuScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "pedidos") {
-                            PedidosScreen(modifier = Modifier.padding(innerPadding))
+                            PedidosScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "perfil") {
-                            PerfilScreen(modifier = Modifier.padding(innerPadding))
+                            PerfilScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                     }
                 }
