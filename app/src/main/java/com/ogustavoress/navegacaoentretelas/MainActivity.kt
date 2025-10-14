@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.ogustavoress.navegacaoentretelas.screens.LoginScreen
 import com.ogustavoress.navegacaoentretelas.screens.MenuScreen
 import com.ogustavoress.navegacaoentretelas.screens.PedidosScreen
@@ -38,11 +40,27 @@ class MainActivity : ComponentActivity() {
                             MenuScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "pedidos") {
-                            PedidosScreen(modifier = Modifier.padding(innerPadding), navController)
+                            PedidosScreen(
+                                modifier = Modifier.padding(innerPadding),
+                                navController,
+                                it.arguments?.getString("cliente")
+                            )
                         }
-                        composable(route = "perfil/{nome}") {
+                        composable(
+                            route = "perfil/{nome}",
+                            arguments = listOf(
+                                navArgument("nome") { type = NavType.IntType },
+                                navArgument("idade") { type = NavType.IntType }
+                            )
+                        ) {
                             val nome: String? = it.arguments?.getString("nome", "Usuário Genérico")
-                            PerfilScreen(modifier = Modifier.padding(innerPadding), navController, nome!!)
+                            val idade: Int? = it.arguments?.getInt("idade", 0)
+                            PerfilScreen(
+                                modifier = Modifier.padding(innerPadding),
+                                navController,
+                                nome!!,
+                                idade!!
+                            )
                         }
                     }
                 }
