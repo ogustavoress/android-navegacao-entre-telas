@@ -22,7 +22,7 @@ import androidx.navigation.NavController
 fun PedidosScreen(modifier: Modifier = Modifier, navController: NavController, string: String?) {
     Box(modifier = modifier
         .fillMaxSize()
-        .background(Color(0xFFFA9A9A9))
+        .background(Color(0xFF161616))
         .padding(32.dp)
     ) {
         Text(
@@ -32,14 +32,14 @@ fun PedidosScreen(modifier: Modifier = Modifier, navController: NavController, s
             color = Color.White
         )
         Button(
-            onClick = { navController.navigate("meny") },
-            colors = ButtonDefaults.buttonColors(Color.White),
+            onClick = { navController.navigate("menu") },
+            colors = ButtonDefaults.buttonColors(Color(0xFFED145B)),
             modifier = Modifier.align(Alignment.Center)
         ) {
             Text(
                 text = "Voltar",
                 fontSize = 20.sp,
-                color = Color.Blue
+                color = Color.White
             )
         }
     }

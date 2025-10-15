@@ -25,7 +25,7 @@ import androidx.navigation.NavController
 fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
     Box(
         modifier = modifier.fillMaxSize()
-            .background(Color(0xFF2C4EC7))
+            .background(Color(0xFF161616))
             .padding(32.dp)
     ) {
         Text(
@@ -40,37 +40,37 @@ fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
         ) {
             Button(
                 onClick = { navController.navigate("perfil/nome-usuario/21") },
-                colors = ButtonDefaults.buttonColors(Color.White),
+                colors = ButtonDefaults.buttonColors(Color(0xFFED145B)),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {
                 Text(
                     text = "Perfil",
                     fontSize = 20.sp,
-                    color = Color.Blue
+                    color = Color.White
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
                 onClick = { navController.navigate("pedidos?cliente=Cliente XPTO") },
-                colors = ButtonDefaults.buttonColors(Color.White),
+                colors = ButtonDefaults.buttonColors(Color(0xFFED145B)),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {
                 Text(
                     text = "Pedidos",
                     fontSize = 20.sp,
-                    color = Color.Blue
+                    color = Color.White
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
                 onClick = { navController.navigate("login")},
-                colors = ButtonDefaults.buttonColors(Color.White),
+                colors = ButtonDefaults.buttonColors(Color(0xFFED145B)),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {
                 Text(
                     text = "Sair",
                     fontSize = 20.sp,
-                    color = Color.Blue
+                    color = Color.White
                 )
             }
         }

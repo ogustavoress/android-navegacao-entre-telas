@@ -21,7 +21,7 @@ fun LoginScreen(modifier: Modifier = Modifier, navController: NavController) {
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(Color.DarkGray)
+            .background(Color(0xFF161616))
             .padding(32.dp)
     ) {
         Text(
