@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(
-                            route = "perfil/{nome}",
+                            route = "perfil/{nome}/{idade}",
                             arguments = listOf(
                                 navArgument("nome") { type = NavType.IntType },
                                 navArgument("idade") { type = NavType.IntType }
