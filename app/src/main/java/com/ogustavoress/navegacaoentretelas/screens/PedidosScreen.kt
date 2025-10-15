@@ -1,4 +1,4 @@
-@file:JvmName("PerfilScreenKt")
+@file:JvmName("PedidosScreenKt")
 
 package com.ogustavoress.navegacaoentretelas.screens
 
